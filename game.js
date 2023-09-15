@@ -80,19 +80,19 @@ function game(){
             pscore += 1;
             cscore += 1;
         }
-
-        if(pscore > cscore){
-            final = "The player wins!";
-        }
-        else if(cscore > pscore){
-            final = "The computer wins!";
-        }
-        else{
-            final = "It was a tie!";
-        }
-        
-        return `The final score was: ${pscore} to ${cscore}. ${final}`;
     }
+    
+    if(pscore > cscore){
+        final = "The player wins!";
+    }
+    else if(cscore > pscore){
+        final = "The computer wins!";
+    }
+    else{
+        final = "It was a tie!";
+    }
+
+    return `The final score was: ${pscore} to ${cscore}. ${final}`;
 }
 
 string = "-1, 1: Tie";
