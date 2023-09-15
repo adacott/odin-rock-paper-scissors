@@ -64,7 +64,8 @@ function playRound(){
 // Use the previous function inside of this one to play a 5-round game that keeps score and reports
 // a winner or a loser at the end. use prompt() to get input from the user
 function game(){
-    let result, pscore, cscore;
+    let result, pscore = 0, cscore = 0, final;
+
     for(let i = 0; i < 2; i ++){
         result = playRound();
         console.log(result);
@@ -79,7 +80,18 @@ function game(){
             pscore += 1;
             cscore += 1;
         }
+
+        if(pscore > cscore){
+            final = "The player wins!";
+        }
+        else if(cscore > pscore){
+            final = "The computer wins!";
+        }
+        else{
+            final = "It was a tie!";
+        }
         
+        return `The final score was: ${pscore} to ${cscore}. ${final}`;
     }
 }
 
