@@ -37,7 +37,6 @@ function getComputerChoice(){
 function playRound(){
     let player = prompt("Please enter Rock, Paper, or Scissors: ").toLowerCase();
     let computer = getComputerChoice();
-    console.log("this works");
 
     if(player == "rock" && computer == "scissors"){
         return "You win! Rock beats Scissors!";
@@ -57,12 +56,34 @@ function playRound(){
     else if(computer == "scissors" && player == "paper"){
         return "You lose! Scissors beat Paper!";
     }
+    else {
+        return "It was a tie!";
+    }
 }
 
 // Use the previous function inside of this one to play a 5-round game that keeps score and reports
 // a winner or a loser at the end. use prompt() to get input from the user
 function game(){
+    let result, pscore, cscore;
+    for(let i = 0; i < 2; i ++){
+        result = playRound();
+        console.log(result);
 
+        if(result.includes("win")){
+            pscore += 1;
+        }
+        else if(result.includes("lose")){
+            cscore += 1;
+        }
+        else{
+            pscore += 1;
+            cscore += 1;
+        }
+        
+    }
 }
+
+string = "-1, 1: Tie";
+num = parseInt(string);
 
 
