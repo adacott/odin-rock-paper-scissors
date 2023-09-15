@@ -66,7 +66,9 @@ function playRound(){
 function game(){
     let result, pscore = 0, cscore = 0, final;
 
-    for(let i = 0; i < 2; i ++){
+    console.log("Okay, this game is to the best of 5 rounds: ");
+
+    for(let i = 0; i < 5; i ++){
         result = playRound();
         console.log(result);
 
@@ -81,7 +83,7 @@ function game(){
             cscore += 1;
         }
     }
-    
+
     if(pscore > cscore){
         final = "The player wins!";
     }
@@ -94,8 +96,5 @@ function game(){
 
     return `The final score was: ${pscore} to ${cscore}. ${final}`;
 }
-
-string = "-1, 1: Tie";
-num = parseInt(string);
 
 
