@@ -22,26 +22,14 @@ body {
 .header {
     /* border: 5px solid rgb(13, 0, 196); */
     width: 100%;
-    font-size: 75px;
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    /* offset-x, offset-y, blur-radius, color */
-    /* text-shadow: 0px 0px 25px #fc0; */
-    text-shadow:
-        8px 5px 3px rgb(0, 0, 0),
-        0 0 0.5em rgb(0, 221, 255),
-        0 0 0.2em rgb(0, 255, 128);
 }
 
 .svg-title {
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-
     stroke: #ffffff;
     width: 750px;
 
@@ -141,17 +129,32 @@ body {
 .choices button {
     width: 150px;
     height: 150px;
-    background-color: rgba(0, 0, 0, 0.594);
+    background-color: rgb(0, 0, 0);
     border-radius: 15px;
     color: rgb(97, 181, 2);
     font-weight: 600;
     font-size: 28px;
     /* offset-x, offset-y, blur-radius, spread-radius */
-    box-shadow:
-        -5px -5px 15px 5px rgb(20, 146, 171),
-        5px 5px 15px 5px rgba(150, 55, 34, 0.733);
+    /* box-shadow:
+        /* -5px -5px 15px 5px rgb(20, 146, 171), */
     flex: 1;
 
+    animation-name: animate-button;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animate-button {
+    0% {
+        filter:
+            drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 2px #ff80b3) drop-shadow(0px 0px 2px #ff4d94) drop-shadow(0px 0px 2px #ff0066);
+    }
+
+    100% {
+        filter:
+            drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 3px #ff80b3) drop-shadow(0px 0px 4px #ff4d94) drop-shadow(0px 0px 4px #ff0066);
+    }
 }
 
 .choices button:hover {
@@ -166,8 +169,10 @@ body {
     transform: translateY(4px);
     transform: translateX(4px);
     box-shadow:
-        -3px -3px 15px 1px rgba(20, 146, 171, 0.503),
         2px 2px 15px 1px rgba(150, 55, 34, 0.531);
+
+    animation-name: animate-button;
+    animation-duration: 0s;
 }
 
 .footer {
