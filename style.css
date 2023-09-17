@@ -4,13 +4,13 @@
 }
 
 body {
-    border: 5px solid firebrick;
+    /* border: 5px solid firebrick; */
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.972);
 }
 
 .interface {
-    border: 5px solid rgb(128, 178, 34);
+    /* border: 5px solid rgb(128, 178, 34); */
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@ body {
     width: 150px;
     height: 150px;
     background-color: rgba(0, 0, 0, 0.594);
-    border-radius: 10px;
+    border-radius: 15px;
     color: rgb(255, 0, 0);
     font-weight: 600;
     font-size: 25px;
