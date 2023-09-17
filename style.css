@@ -36,6 +36,33 @@ body {
         0 0 0.2em rgb(0, 255, 128);
 }
 
+.svg-title {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+
+    stroke: #ffffff;
+    width: 750px;
+
+    animation-name: animate;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animate {
+    0% {
+        filter:
+            drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 10px #ff80b3) drop-shadow(0px 0px 30px #ff4d94) drop-shadow(0px 0px 50px #ff0066);
+    }
+
+    100% {
+        filter:
+            drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 6px #fff) drop-shadow(0px 0px 15px #ff80b3) drop-shadow(0px 0px 40px #ff4d94) drop-shadow(0px 0px 60px #ff0066);
+    }
+}
+
 .middle {
     /* border: 5px solid rgb(34, 178, 87); */
     display: flex;
@@ -100,10 +127,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-img {
-    filter: url(#red-glow);
 }
 
 .choices {
