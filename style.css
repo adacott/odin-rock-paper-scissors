@@ -108,10 +108,20 @@ body {
     /* offset-x, offset-y, blur-radius, spread-radius */
     box-shadow: 0px 0px 15px 7px rgba(171, 20, 98, 0.75);
     flex: 1;
+
+}
+
+.choices button:hover {
     text-shadow:
         0.08em 1px 5px rgb(87, 8, 8),
         0 0 0.2em rgb(254, 0, 0),
         0 0 0.2em rgb(255, 162, 2);
+}
+
+.choices button:active {
+    transform: translateY(4px);
+    transform: translateX(4px);
+    box-shadow: 0px 0px 15px 1px rgba(171, 20, 98, 0.75);
 }
 
 .footer {
