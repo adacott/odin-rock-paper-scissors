@@ -32,8 +32,8 @@ body {
     /* text-shadow: 0px 0px 25px #fc0; */
     text-shadow:
         8px 5px 3px rgb(0, 0, 0),
-        0 0 0.5em rgb(255, 0, 4),
-        0 0 0.2em rgb(255, 0, 204);
+        0 0 0.5em rgb(0, 221, 255),
+        0 0 0.2em rgb(0, 255, 128);
 }
 
 .middle {
@@ -47,7 +47,7 @@ body {
 }
 
 .screen {
-    border: 5px solid rgb(171, 178, 34);
+    /* border: 5px solid rgb(171, 178, 34); */
     width: 98%;
     height: 60%;
     display: flex;
@@ -62,30 +62,41 @@ body {
 }
 
 .round-declaration {
-    border: 5px solid rgb(178, 34, 84);
+    /* border: 5px solid rgb(178, 34, 84); */
     text-align: center;
     font-size: 30px;
+    text-shadow:
+        8px 5px 3px rgb(0, 0, 0),
+        0 0 0.5em rgb(208, 0, 255),
+        0 0 0.3em rgb(89, 0, 255);
 }
 
 .round-subtext {
     text-align: center;
     font-size: 25px;
+    text-shadow:
+        8px 5px 3px rgb(0, 0, 0),
+        0 0 0.5em rgb(255, 0, 208),
+        0 0 0.2em rgb(255, 179, 0);
+    margin-bottom: 10px;
+
 }
 
 .bot-screen {
-    border: 5px solid rgb(111, 34, 178);
+    /* border: 5px solid rgb(111, 34, 178); */
     color: white;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
+    gap: 30px;
 }
 
 .box {
     border: 5px solid rgb(171, 178, 34);
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 100%;
 }
 
 .choices {
@@ -102,26 +113,31 @@ body {
     height: 150px;
     background-color: rgba(0, 0, 0, 0.594);
     border-radius: 15px;
-    color: rgb(255, 0, 0);
+    color: rgb(97, 181, 2);
     font-weight: 600;
-    font-size: 25px;
+    font-size: 28px;
     /* offset-x, offset-y, blur-radius, spread-radius */
-    box-shadow: 0px 0px 15px 7px rgba(171, 20, 98, 0.75);
+    box-shadow:
+        -5px -5px 15px 5px rgb(20, 146, 171),
+        5px 5px 15px 5px rgba(150, 55, 34, 0.733);
     flex: 1;
 
 }
 
 .choices button:hover {
     text-shadow:
-        0.08em 1px 5px rgb(87, 8, 8),
-        0 0 0.2em rgb(254, 0, 0),
-        0 0 0.2em rgb(255, 162, 2);
+        0.08em 1px 1em rgb(87, 8, 8),
+        0 0 0.2em rgb(0, 241, 254),
+        0 0 0.2em rgb(44, 255, 2);
+    color: rgb(137, 255, 3);
 }
 
 .choices button:active {
     transform: translateY(4px);
     transform: translateX(4px);
-    box-shadow: 0px 0px 15px 1px rgba(171, 20, 98, 0.75);
+    box-shadow:
+        -3px -3px 15px 1px rgba(20, 146, 171, 0.503),
+        2px 2px 15px 1px rgba(150, 55, 34, 0.531);
 }
 
 .footer {
