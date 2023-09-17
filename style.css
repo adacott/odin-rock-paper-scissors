@@ -97,6 +97,13 @@ body {
     border: 5px solid rgb(171, 178, 34);
     width: 300px;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    filter: url(#red-glow);
 }
 
 .choices {
