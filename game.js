@@ -40,31 +40,32 @@ function playRound(player, computer) {
     sub_result = document.querySelector(".round-subtext div");
 
     if (player == "rock" && computer == "scissors") {
-        result.innerHTML = "You're a rockstar!";
-        return "You win! Rock beats Scissors!";
+        result.innerHTML = "You won the round!";
+        sub_result.innerHTML = "Rock beats scissors!";
     }
     else if (player == "scissors" && computer == "paper") {
-        result.innerHTML = "You're a rockstar!";
-        return "You win! Scissors beat Paper!";
+        result.innerHTML = "You won the round!";
+        sub_result.innerHTML = "Scissors beat paper!";
     }
     else if (player == "paper" && computer == "rock") {
-        result.innerHTML = "You're a rockstar!";
-        return "You win! Paper beats Rock!";
+        result.innerHTML = "You won the round!";
+        sub_result.innerHTML = "Paper beats rock!";
     }
     else if (computer == "rock" && player == "scissors") {
-        result.innerHTML = "You're a loser!";
-        return "You lose! Rock beats Scissors!";
+        result.innerHTML = "You lost the round!";
+        sub_result.innerHTML = "Scissors loses to rock!";
     }
     else if (computer == "paper" && player == "rock") {
-        result.innerHTML = "You're a loser!";
-        return "You lose! Paper beats Rock!";
+        result.innerHTML = "You lost the round!";
+        sub_result.innerHTML = "Rock loses to paper!";
     }
     else if (computer == "scissors" && player == "paper") {
-        result.innerHTML = "You're a loser!";
-        return "You lose! Scissors beat Paper!";
+        result.innerHTML = "You lost the round!";
+        sub_result.innerHTML = "Paper loses to scissors!";
     }
     else {
-        return "It was a tie!";
+        result.innerHTML = "It was a tie!";
+        sub_result.innerHTML = "No points given!";
     }
 }
 
@@ -139,7 +140,7 @@ function myFunction(e) {
 
     // Reach each button's event class, then adjust the player image to be the same:
     cl = e.target.className;
-    pim = document.querySelectorAll(".box img");
+    pim = document.querySelectorAll(".boxes .box img");
     pim.forEach(each => each.style.width = "80%");
     pim.forEach(each => each.style.height = "80%");
 
