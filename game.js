@@ -22,12 +22,6 @@ function getComputerChoice() {
     }
 }
 
-// function that plays a round; takes two parameters, the 
-// playerSelection (rock, paper, or scissors) and (computerSelection)
-// then it will return a string that declares the winner of the round like so:
-// "You Lose! Paper beats Rock!"
-//
-// Hint: make your players playerselection parameter case-insensitive
 /**
  * 
  * @param {string} playerSelection 
@@ -69,12 +63,11 @@ function playRound(player, computer) {
     }
 }
 
-// Use the previous function inside of this one to play a 5-round game that keeps score and reports
-// a winner or a loser at the end. use prompt() to get input from the user
 function game() {
     let result, pscore = 0, cscore = 0, final;
     result = playRound();
 
+    // Tally score
     if (result.includes("win")) {
         pscore += 1;
     }
@@ -86,73 +79,33 @@ function game() {
         cscore += 1;
     }
 
-    if (pscore > cscore) {
+    // Game declaration
+    if ((pscore == 5 || cscore == 5) && pscore > cscore) {
         final = "The player wins!";
     }
-    else if (cscore > pscore) {
+    else if ((pscore == 5 || cscore == 5) && cscore > pscore) {
         final = "The computer wins!";
     }
-    else {
-        final = "It was a tie!";
-    }
-
-    return `The final score was: ${pscore} to ${cscore}. ${final}`;
 }
 
-
-// Always make sure that you have your script tag at the very end of your file. 
-// If you do not then try to use queryselector, it will not work properly because the DOM tree
-// has not been built and populated yet
-//
-// To add a custom function to this, instead use this format:
-// btns.forEach(btn => btn.addEventListener("click", myfunction()));
-
-// To see what you are working with you can create any console then log the event like so:
-// function playRound(e){
-//     console.log(e);
-// }
-// This will allow you to gain insight into the "click" event. This is functionally similar to defining function(e){} inside of the event listener function, but much cleaner while laying the ground-work for implementing a function that will actually do something
-
-
-// Adds an event listener to each button, running the function for each
-// btns.forEach(btn => btn.addEventListener("click", function (e) {
-//     console.log(e);
-// }));
-
-
 function myFunction(e) {
-    // player = document.querySelector("div.player");
-    // console.log(player);
-
-    // npc = document.querySelector("div.npc");
-    // console.log(npc);
-
-    // npc.innerHTML = "New Text!";
-    // player.innerHTML = "Now, we have to use word-wrap property. So, we have to place the cursor between the head tag just after the title tag. And, then we have to define a class and ";
-
-    // console.log(e.target.className); // returns the class name to use to select the results
-
-    // Selects the image element for the player and changes the image and size
-
-    // console.log(im);
-    // im.src = "svg-assets/rock.svg";
-
-
-    // Reach each button's event class, then adjust the player image to be the same:
+    // Read each button's event class, then adjust the player image to be the same:
     cl = e.target.className;
     pim = document.querySelectorAll(".boxes .box img");
-    pim.forEach(each => each.style.width = "80%");
-    pim.forEach(each => each.style.height = "80%");
+    pim.forEach(each => each.style.width = "65%");
+    pim.forEach(each => each.style.height = "65%");
     pc = getComputerChoice();
 
     pim[0].src = `svg-assets/${cl}.svg`;
     pim[1].src = `svg-assets/${pc}.svg`;
 
     playRound(cl, pc);
+    // Here, the function for game will go, which will tally the score and reset at 5 points
 
 
 }
 
 const btns = document.querySelectorAll("button");
 btns.forEach(btn => btn.addEventListener("click", myFunction));
+
 
