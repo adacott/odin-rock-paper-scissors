@@ -123,14 +123,14 @@ function myFunction(e) {
     // npc.innerHTML = "New Text!";
     // player.innerHTML = "Now, we have to use word-wrap property. So, we have to place the cursor between the head tag just after the title tag. And, then we have to define a class and ";
 
-    // console.log(e.target.className); // returns the class name to use to select the results
+    console.log(e.target.className); // returns the class name to use to select the results
 
     // Selects the image element for the player and changes the image and size
-    // im = document.querySelector(".box img");
-    // console.log(im);
-    // im.src = "svg-assets/rock.svg";
-    // im.width = 200;
-    // im.height = 200;
+    im = document.querySelector(".box img");
+    console.log(im);
+    im.src = "svg-assets/rock.svg";
+    im.style.width = "80%";
+    im.style.height = "80%";
 
     // Reach each button's event class, then adjust the player image to be the same:
     if (e.target.className == "rock") {
