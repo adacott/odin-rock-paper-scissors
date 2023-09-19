@@ -34,26 +34,33 @@ function getComputerChoice() {
  * @param {string} getComputerChoice 
  * @returns 
  */
-function playRound() {
-    let player = prompt("Please enter Rock, Paper, or Scissors: ").toLowerCase();
-    let computer = getComputerChoice();
+function playRound(player, computer) {
+
+    result = document.querySelector(".round-declaration h3");
+    sub_result = document.querySelector(".round-subtext div");
 
     if (player == "rock" && computer == "scissors") {
+        result.innerHTML = "You're a rockstar!";
         return "You win! Rock beats Scissors!";
     }
     else if (player == "scissors" && computer == "paper") {
+        result.innerHTML = "You're a rockstar!";
         return "You win! Scissors beat Paper!";
     }
     else if (player == "paper" && computer == "rock") {
+        result.innerHTML = "You're a rockstar!";
         return "You win! Paper beats Rock!";
     }
     else if (computer == "rock" && player == "scissors") {
+        result.innerHTML = "You're a loser!";
         return "You lose! Rock beats Scissors!";
     }
     else if (computer == "paper" && player == "rock") {
+        result.innerHTML = "You're a loser!";
         return "You lose! Paper beats Rock!";
     }
     else if (computer == "scissors" && player == "paper") {
+        result.innerHTML = "You're a loser!";
         return "You lose! Scissors beat Paper!";
     }
     else {
@@ -105,13 +112,12 @@ function game() {
 // }
 // This will allow you to gain insight into the "click" event. This is functionally similar to defining function(e){} inside of the event listener function, but much cleaner while laying the ground-work for implementing a function that will actually do something
 
-const btns = document.querySelectorAll("button");
-console.log(btns);
 
 // Adds an event listener to each button, running the function for each
 // btns.forEach(btn => btn.addEventListener("click", function (e) {
 //     console.log(e);
 // }));
+
 
 function myFunction(e) {
     // player = document.querySelector("div.player");
@@ -123,26 +129,29 @@ function myFunction(e) {
     // npc.innerHTML = "New Text!";
     // player.innerHTML = "Now, we have to use word-wrap property. So, we have to place the cursor between the head tag just after the title tag. And, then we have to define a class and ";
 
-    console.log(e.target.className); // returns the class name to use to select the results
+    // console.log(e.target.className); // returns the class name to use to select the results
 
     // Selects the image element for the player and changes the image and size
-    im = document.querySelector(".box img");
-    console.log(im);
-    im.src = "svg-assets/rock.svg";
-    im.style.width = "80%";
-    im.style.height = "80%";
+
+    // console.log(im);
+    // im.src = "svg-assets/rock.svg";
+
 
     // Reach each button's event class, then adjust the player image to be the same:
-    if (e.target.className == "rock") {
-        console.log("It is a rock");
-    }
-    else if (e.target.className == "paper") {
-        console.log("It is paper");
-    }
-    else if (e.target.className == "scissors") {
-        console.log("It is scissors");
-    }
+    cl = e.target.className;
+    pim = document.querySelectorAll(".box img");
+    pim.forEach(each => each.style.width = "80%");
+    pim.forEach(each => each.style.height = "80%");
+
+    pim[0].src = `svg-assets/${cl}.svg`;
+    pc = getComputerChoice();
+    pim[1].src = `svg-assets/${pc}.svg`;
+
+    console.log(playRound(cl, pc));
+
+
 }
 
+const btns = document.querySelectorAll("button");
 btns.forEach(btn => btn.addEventListener("click", myFunction));
 
