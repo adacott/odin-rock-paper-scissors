@@ -29,7 +29,7 @@ function getComputerChoice() {
  * @returns 
  */
 function playRound(player, computer) {
-
+    let result, sub_result;
     result = document.querySelector(".round-declaration h3");
     sub_result = document.querySelector(".round-subtext div");
 
@@ -63,29 +63,40 @@ function playRound(player, computer) {
     }
 }
 
-function game() {
-    let result, pscore = 0, cscore = 0, final;
-    result = playRound();
+function game(player, computer) {
+    result = document.querySelector(".round-declaration h3");
+    text = result.innerHTML;
+    p = document.querySelector(".player");
+    c = document.querySelector(".npc");
 
     // Tally score
-    if (result.includes("win")) {
+    if (text.includes("won")) {
         pscore += 1;
     }
-    else if (result.includes("lose")) {
+    else if (text.includes("lost")) {
         cscore += 1;
     }
     else {
-        pscore += 1;
-        cscore += 1;
+        pscore += 0;
+        cscore += 0;
     }
+
+    p.innerHTML = `Player: ${pscore}`;
+    c.innerHTML = `Computer: ${cscore}`;
 
     // Game declaration
     if ((pscore == 5 || cscore == 5) && pscore > cscore) {
-        final = "The player wins!";
+        result.innerHTML = "You won the game!!";
+        pscore = 0;
+        cscore = 0;
     }
     else if ((pscore == 5 || cscore == 5) && cscore > pscore) {
-        final = "The computer wins!";
+        result.innerHTML = "You lost the game!";
+        pscore = 0;
+        cscore = 0;
     }
+
+
 }
 
 function myFunction(e) {
@@ -101,11 +112,14 @@ function myFunction(e) {
 
     playRound(cl, pc);
     // Here, the function for game will go, which will tally the score and reset at 5 points
-
+    game(pscore, cscore);
 
 }
 
+// Declare score variables to keep track of
+pscore = 0;
+cscore = 0;
+
+// Declare event listeners
 const btns = document.querySelectorAll("button");
 btns.forEach(btn => btn.addEventListener("click", myFunction));
-
-
