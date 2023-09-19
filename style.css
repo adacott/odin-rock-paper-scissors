@@ -102,7 +102,7 @@ body {
 }
 
 .bot-screen {
-    border: 5px solid rgb(111, 34, 178);
+    /* border: 5px solid rgb(111, 34, 178); */
     color: white;
     display: flex;
     align-items: space-between;
@@ -116,7 +116,7 @@ body {
 }
 
 .boxes {
-    border: 5px solid rgb(39, 34, 178);
+    /* border: 5px solid rgb(39, 34, 178); */
     display: flex;
     justify-content: space-around;
     align-items: space-around;
