@@ -123,7 +123,10 @@ body {
 }
 
 .box div {
-    border: 5px solid rgb(171, 178, 34);
+    border: 5px solid rgb(34, 173, 178);
+    word-wrap: normal;
+    width: 100%;
+    font-size: 12px;
 }
 
 .choices {

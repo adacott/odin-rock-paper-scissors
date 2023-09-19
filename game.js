@@ -114,11 +114,34 @@ console.log(btns);
 // }));
 
 function myFunction(e) {
-    player = document.querySelector("div.player");
-    console.log(player);
+    // player = document.querySelector("div.player");
+    // console.log(player);
 
-    npc = document.querySelector("div.npc");
-    console.log(npc);
+    // npc = document.querySelector("div.npc");
+    // console.log(npc);
+
+    // npc.innerHTML = "New Text!";
+    // player.innerHTML = "Now, we have to use word-wrap property. So, we have to place the cursor between the head tag just after the title tag. And, then we have to define a class and ";
+
+    // console.log(e.target.className); // returns the class name to use to select the results
+
+    // Selects the image element for the player and changes the image and size
+    // im = document.querySelector(".box img");
+    // console.log(im);
+    // im.src = "svg-assets/rock.svg";
+    // im.width = 200;
+    // im.height = 200;
+
+    // Reach each button's event class, then adjust the player image to be the same:
+    if (e.target.className == "rock") {
+        console.log("It is a rock");
+    }
+    else if (e.target.className == "paper") {
+        console.log("It is paper");
+    }
+    else if (e.target.className == "scissors") {
+        console.log("It is scissors");
+    }
 }
 
 btns.forEach(btn => btn.addEventListener("click", myFunction));
