@@ -143,12 +143,12 @@ function myFunction(e) {
     pim = document.querySelectorAll(".boxes .box img");
     pim.forEach(each => each.style.width = "80%");
     pim.forEach(each => each.style.height = "80%");
+    pc = getComputerChoice();
 
     pim[0].src = `svg-assets/${cl}.svg`;
-    pc = getComputerChoice();
     pim[1].src = `svg-assets/${pc}.svg`;
 
-    console.log(playRound(cl, pc));
+    playRound(cl, pc);
 
 
 }
