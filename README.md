@@ -1,6 +1,6 @@
-# odin-rock-paper-scissors
+#rock-paper-scissors
 
-https://adacott.github.io/odin-rock-paper-scissors/ to view the webpage in action
+https://adacott.github.io/rock-paper-scissors/ to view the webpage in action
 
 This is the beginning of the project for the odin project that starts the rock, paper, scissors game. Here, I demonstrate 
 knowledge of basic javscript syntax and functions, creating three functions to simulate playing a game of rock-paper-scissors
